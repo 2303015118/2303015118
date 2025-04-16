@@ -1,0 +1,110 @@
+body {
+    background-color: white;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: sans-serif;
+    padding-top: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+form.form-3 input[type="text"],
+form.form-3 input[type="email"],
+form.form-3 input[type="password"],
+form.form-3 select,
+form.form-3 textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+form.form-3 label {
+    display: block;
+    margin-top: 10px;
+}
+
+form.form-3 .gender-group {
+    margin-top: 5px;
+}
+
+form.form-3 fieldset {
+    width: 350px;
+}
+
+.form-1, .form-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+}
+
+fieldset {
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.button-1, .button-2 {
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+.button-3 {
+    padding: 5px 10px;
+}
+
+.table-4 {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+.table-4 th, .table45 td {
+    border: 1px solid #c989df;
+    text-align: left;
+    padding: 8px;
+}
+
+.table-4 tr:nth-child(even) {
+    background-color: #c989df;
+}
+
+.table-5 {
+    width: 350px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table-5 th, .table-5 td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-5 th {
+    background-color: #f2f2f2;
+}
+
+.table-5 img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}

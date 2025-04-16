@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+                
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .animate-slide-down {
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.2s ease-in forwards;
+        }
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="bg-gray-200 text-white px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <p class="text-2xl font-bold text-black">Hello, <span id="showName" class="italic"></span></p>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-6 items-center text-black">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li class="relative">
+                    <button id="desktop-dropdown-btn" class="hover:underline flex items-center gap-1 text-black">
+                        Pertemuan <span id="desktop-dropdown-icon">▼</span>
+                    </button>
+                    <ul id="desktop-dropdown-menu"
+                        class="absolute hidden bg-white text-black mt-2 rounded-lg shadow-lg w-40 z-10">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan1/latihan.html">Pertemuan 1</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan2/latihan.html">Pertemuan 2</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan3/latihan.html">Pertemuan 3</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan4/latihan.html">Pertemuan 4</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan5/latihan.html">Pertemuan 5</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="hover:underline">Contact</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:underline">Logout</a></li>
+            </ul>
+
+            <!-- Hamburger (Mobile) -->
+            <button id="hamburger" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-6 space-y-2 bg-white text-black rounded-xl mt-5">
+            <a href="#" class="block hover:text-blue-500">Home</a>
+            <div>
+                <button id="mobile-dropdown-btn"
+                    class="w-full text-left flex justify-between items-center hover:text-blue-500">
+                    Pertemuan <span id="mobile-dropdown-icon">▼</span>
+                </button>
+                <ul id="mobile-dropdown-menu" class="hidden mt-2 ml-2 space-y-1">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan1/latihan.html">Pertemuan 1</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan2/latihan.html">Pertemuan 2</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan3/latihan.html">Pertemuan 3</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan4/latihan.html">Pertemuan 4</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100" data-src="../pertemuan/pertemuan5/latihan.html">Pertemuan 5</a></li>
+                </ul>
+            </div>
+            <a href="#" class="block hover:text-blue-500">Contact</a>
+        </div>
+    </nav>
+    <main class="flex justify-center items-center mt-10">
+        <iframe src="../latihan1.html" id="contentFrame" width="700" height="400" class="border rounded-xl shadow-lg"></iframe>
+    </main>
+
+    <script>
+        // Ambil nama dan nim dari query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const names = urlParams.get('name');
+        const nim = urlParams.get('nim');
+
+        if (names) {
+            document.getElementById('showName').innerText = names;
+        }
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dropdown Desktop
+        let desktopDropdownVisible = false;
+
+        const dropdownBtn = document.getElementById('desktop-dropdown-btn');
+        const dropdownMenu = document.getElementById('desktop-dropdown-menu');
+        const dropdownicon = document.getElementById('desktop-dropdown-icon');
+
+        dropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            desktopDropdownVisible = !desktopDropdownVisible;
+
+            if (desktopDropdownVisible) {
+                dropdownMenu.classList.remove('hidden');
+                dropdownMenu.classList.remove('animate-slide-up');
+                dropdownMenu.classList.add('animate-slide-down');
+
+                dropdownBtn.classList.add('text-blue-600');
+                dropdownicon.classList.add('rotate-180');
+            } else {
+                dropdownMenu.classList.remove('animate-slide-down');
+                dropdownMenu.classList.add('animate-slide-up');
+                setTimeout(() => {
+                    dropdownMenu.classList.add('hidden');
+                }, 200);
+
+                dropdownBtn.classList.remove('text-blue-600');
+                dropdownicon.classList.remove('rotate-180');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                if (desktopDropdownVisible) {
+                    dropdownMenu.classList.remove('animate-slide-down');
+                    dropdownMenu.classList.add('animate-slide-up');
+                    setTimeout(() => {
+                        dropdownMenu.classList.add('hidden');
+                    }, 200);
+                    desktopDropdownVisible = false;
+                }
+            }
+        });
+
+
+        // Mobile Dropdown
+        let mobileDropdownVisible = false;
+
+        const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
+        const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
+        const mobileDropdownIcon = document.getElementById('mobile-dropdown-icon');
+
+        mobileDropdownBtn.addEventListener('click', () => {
+            mobileDropdownVisible = !mobileDropdownVisible;
+
+            if (mobileDropdownVisible) {
+                mobileDropdownMenu.classList.remove('hidden');
+                mobileDropdownMenu.classList.remove('animate-slide-up');
+                mobileDropdownMenu.classList.add('animate-slide-down');
+
+                mobileDropdownBtn.classList.add('text-blue-600');
+                mobileDropdownIcon.classList.add('rotate-180');
+            } else {
+                mobileDropdownMenu.classList.remove('animate-slide-down');
+                mobileDropdownMenu.classList.add('animate-slide-up');
+                setTimeout(() => {
+                    mobileDropdownMenu.classList.add('hidden');
+                }, 200);
+
+                mobileDropdownBtn.classList.remove('text-blue-600');
+                mobileDropdownIcon.classList.remove('rotate-180');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            // Mobile
+            if (
+                mobileDropdownVisible &&
+                !mobileDropdownBtn.contains(e.target) &&
+                !mobileDropdownMenu.contains(e.target)
+            ) {
+                mobileDropdownMenu.classList.remove('animate-slide-down');
+                mobileDropdownMenu.classList.add('animate-slide-up');
+                setTimeout(() => {
+                    mobileDropdownMenu.classList.add('hidden');
+                }, 200);
+                mobileDropdownBtn.classList.remove('text-blue-600');
+                mobileDropdownIcon.classList.remove('rotate-180');
+                mobileDropdownVisible = false;
+            }
+
+            // Desktop
+            if (
+                desktopDropdownVisible &&
+                !dropdownBtn.contains(e.target) &&
+                !dropdownMenu.contains(e.target)
+            ) {
+                dropdownMenu.classList.remove('animate-slide-down');
+                dropdownMenu.classList.add('animate-slide-up');
+                setTimeout(() => {
+                    dropdownMenu.classList.add('hidden');
+                }, 200);
+                dropdownBtn.classList.remove('text-blue-600');
+                dropdownicon.classList.remove('rotate-180');
+                desktopDropdownVisible = false;
+            }
+        });
+
+        function updateFrame(src) {
+            const iframe = document.getElementById('contentFrame');
+            iframe.src = src;
+        }
+
+        document.querySelectorAll('[data-src]').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const newSrc = item.getAttribute('data-src');
+                updateFrame(newSrc);
+            });
+        });
+    </script>
+</body>
+
+</html>
