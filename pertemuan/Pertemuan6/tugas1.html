@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Form Nilai Mahasiswa - 2303015118</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+    }
+    .output {
+      margin-top: 30px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Form Penilaian Mahasiswa - 2303015118</h1>
+  <form id="formMahasiswa2303015118" onsubmit="return hitungNilaiAkhir2303015118()">
+    <label for="nim2303015118">NIM:</label>
+    <input type="text" id="nim2303015118" required>
+
+    <label for="nama2303015118">Nama Lengkap:</label>
+    <input type="text" id="nama2303015118" required>
+
+    <label for="alamat2303015118">Alamat:</label>
+    <textarea id="alamat2303015118" rows="2" required></textarea>
+
+    <label for="ttl2303015118">Tempat, Tanggal Lahir:</label>
+    <input type="text" id="ttl2303015118" required>
+
+    <label for="email2303015118">Alamat Email:</label>
+    <input type="email" id="email2303015118" required>
+
+    <label for="matkul2303015118">Nama Mata Kuliah:</label>
+    <input type="text" id="matkul2303015118" required>
+
+    <label for="keaktifan2303015118">Nilai Keaktifan (10%):</label>
+    <input type="number" id="keaktifan2303015118" min="0" max="100" required>
+
+    <label for="tugas2303015118">Nilai Tugas (20%):</label>
+    <input type="number" id="tugas2303015118" min="0" max="100" required>
+
+    <label for="uts2303015118">Nilai UTS (30%):</label>
+    <input type="number" id="uts2303015118" min="0" max="100" required>
+
+    <label for="uas2303015118">Nilai UAS (40%):</label>
+    <input type="number" id="uas2303015118" min="0" max="100" required>
+
+    <button type="submit">Hitung Nilai Akhir</button>
+  </form>
+
+  <div class="output" id="hasilOutput2303015118"></div>
+
+  <script>
+    function hitungNilaiAkhir2303015118() {
+      const keaktifan = parseFloat(document.getElementById("keaktifan2303015118").value);
+      const tugas = parseFloat(document.getElementById("tugas2303015118").value);
+      const uts = parseFloat(document.getElementById("uts2303015118").value);
+      const uas = parseFloat(document.getElementById("uas2303015118").value);
+
+      const nilaiAkhir = (keaktifan * 0.1) + (tugas * 0.2) + (uts * 0.3) + (uas * 0.4);
+      let grade;
+
+      if (nilaiAkhir >= 85) {
+        grade = "A";
+      } else if (nilaiAkhir >= 75) {
+        grade = "B";
+      } else if (nilaiAkhir >= 60) {
+        grade = "C";
+      } else if (nilaiAkhir >= 50) {
+        grade = "D";
+      } else {
+        grade = "E";
+      }
+
+      const hasil = `
+        <h2>Hasil Perhitungan:</h2>
+        <p><strong>NIM:</strong> ${document.getElementById("nim2303015118").value}</p>
+        <p><strong>Nama:</strong> ${document.getElementById("nama2303015118").value}</p>
+        <p><strong>Alamat:</strong> ${document.getElementById("alamat2303015118").value}</p>
+        <p><strong>Tempat, Tanggal Lahir:</strong> ${document.getElementById("ttl2303015118").value}</p>
+        <p><strong>Email:</strong> ${document.getElementById("email2303015118").value}</p>
+        <p><strong>Mata Kuliah:</strong> ${document.getElementById("matkul2303015118").value}</p>
+        <p><strong>Nilai Akhir:</strong> ${nilaiAkhir.toFixed(2)}</p>
+        <p><strong>Grade:</strong> ${grade}</p>
+      `;
+
+      document.getElementById("hasilOutput2303015118").innerHTML = hasil;
+
+      return false; // mencegah reload form
+    }
+  </script>
+</body>
+</html>
