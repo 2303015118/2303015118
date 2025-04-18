@@ -27,10 +27,92 @@
     <h3>Latihan 3 Slide 11</h3>
     <button onclick="slide11()">Munculkan Alert</button>
     <br><hr>
+
+    <!--Latihan 4 Slide 14-->
+    <h3>Latihan 4 SLide 14</h3>
+    <br>
+    <h1 id="heading1">Hello World</h1>
+    <button onclick="slide14()">Munculkan Alert</button>
+    <br><hr>
+
+    <!--Latihan 5 Slide 15-->
+    <h3>Latihan 5 Slide 15</h3>
+    <a href="http://google.com" id="myGoogle">Goto google.com</a> <br><br>
+    <button onclick="changeGoogleCom()">Change google.co.com</button>
+    <button onclick="changeGoogleCoId()">Change google.co.id</button>
+
+    <br><hr>
+    
+    <!--Latihan 1 Slide 16-->
+    <h3>Latihan 1 Slide 16</h3>
+    <p id="myText" style="font-size: 20px;">Ini adalah teks</p>
+    <button onclick="changeReguler()">Change to Reguler</button>
+    <button onclick="changeBold()">Change to Bold</button>
+    <br><hr>
+
+    <!--Latihan 1 Slide 17-->
+    <h3>Latihan 1 Slide 17</h3>
+    <p id="myText2" style="font-size: 20px;">Ini adalah teks</p>
+    <button onclick="show()">Show</button>
+    <button onclick="hide()">Hide</button>
+    <br><hr>
+
+    <!--Latihan 1 Slide 18-->
+    <h3>Latihan 1 Slide 18</h3>
+    <button onclick="showDate()">Show Date in Pop Up</button>
     <script>
          // Latihan 1 Slide 9
         function slide9(){
             alert ("Hello dari Latihan 1 Slide 9");
+        }
+
+        // Latihan 3 Slide 14
+        // Mengubah element yang beratribute id="heading1" menjadi "Hello dari Latihan 3 Slide 14" atau sesuai dengan yang diinginkan
+        function slide14() {
+            let heading1 = document.getElementById('heading1');
+            heading1.innerHTML = "Hello dari Latihan 3 Slide 14";
+        }
+
+        // Latihan 4 Slide 15
+        function changeGoogleCom() {
+            let myGoogle = document.getElementById('myGoogle');
+            myGoogle.href = "http://google.com";  
+            myGoogle.innerHTML = "Goto google.com"          
+        }
+
+        function changeGoogleCoId() {
+            let myGoogle = document.getElementById('myGoogle');
+            myGoogle.href = "http://google.co.id";
+            myGoogle.innerHTML = "Goto google.co.id";
+        }
+
+        // Latihan 1 Slide 16
+        function changeReguler() {
+            let myText = document.getElementById('myText');
+            myText.style.fontWeight = 'normal';
+        }
+
+        function changeBold() {
+            let myText = document.getElementById('myText');
+            myText.style.fontWeight = 'bold';
+        }
+
+        // Latihan 1 Slide 17
+        function show() {
+            let myText2 = document.getElementById('myText2');;
+            myText2.style.display = 'block';
+        }
+
+        function hide() {
+            let myText2 = document.getElementById('myText2');
+            myText2.style.display = 'none';
+        }
+
+        // Latihan 1 Slide 18
+        function showDate() {
+            let date = new Date();
+            alert(date);
+            
         }
     </script>
     </body>
