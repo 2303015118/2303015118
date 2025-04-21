@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
   <meta charset="UTF-8">
   <title>Form Nilai Mahasiswa - 2303015118</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-    }
-    .output {
-      margin-top: 30px;
-      border-top: 1px solid #ccc;
-      padding-top: 20px;
+      font-family: 'Comic Neue', cursive;
     }
   </style>
 </head>
-<body>
-  <h1>Form Penilaian Mahasiswa - 2303015118</h1>
-  <form id="formMahasiswa2303015118" onsubmit="return hitungNilaiAkhir2303015118()">
-    <label for="nim2303015118">NIM:</label>
-    <input type="text" id="nim2303015118" required>
+<body class="bg-pink-100 text-gray-800 p-6">
 
-    <label for="nama2303015118">Nama Lengkap:</label>
-    <input type="text" id="nama2303015118" required>
+  <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-lg p-8 border-4 border-dashed border-purple-300">
+    <h1 class="text-2xl font-bold text-center text-purple-600 mb-6">Form Penilaian Mahasiswa - 2303015118</h1>
 
-    <label for="alamat2303015118">Alamat:</label>
-    <textarea id="alamat2303015118" rows="2" required></textarea>
+    <form id="formMahasiswa2303015118" onsubmit="return hitungNilaiAkhir2303015118()" class="space-y-4">
 
-    <label for="ttl2303015118">Tempat, Tanggal Lahir:</label>
-    <input type="text" id="ttl2303015118" required>
+      <div>
+        <label for="nim2303015118" class="font-semibold">NIM:</label>
+        <input type="text" id="nim2303015118" required class="rounded-xl border p-2 w-full">
+      </div>
 
-    <label for="email2303015118">Alamat Email:</label>
-    <input type="email" id="email2303015118" required>
+      <div>
+        <label for="nama2303015118" class="font-semibold">Nama Lengkap:</label>
+        <input type="text" id="nama2303015118" required class="rounded-xl border p-2 w-full">
+      </div>
 
-    <label for="matkul2303015118">Nama Mata Kuliah:</label>
-    <input type="text" id="matkul2303015118" required>
+      <div>
+        <label for="alamat2303015118" class="font-semibold">Alamat:</label>
+        <textarea id="alamat2303015118" rows="2" required class="rounded-xl border p-2 w-full"></textarea>
+      </div>
 
-    <label for="keaktifan2303015118">Nilai Keaktifan (10%):</label>
-    <input type="number" id="keaktifan2303015118" min="0" max="100" required>
+      <div>
+        <label for="ttl2303015118" class="font-semibold">Tempat, Tanggal Lahir:</label>
+        <input type="text" id="ttl2303015118" required class="rounded-xl border p-2 w-full">
+      </div>
 
-    <label for="tugas2303015118">Nilai Tugas (20%):</label>
-    <input type="number" id="tugas2303015118" min="0" max="100" required>
+      <div>
+        <label for="email2303015118" class="font-semibold">Alamat Email:</label>
+        <input type="email" id="email2303015118" required class="rounded-xl border p-2 w-full">
+      </div>
 
-    <label for="uts2303015118">Nilai UTS (30%):</label>
-    <input type="number" id="uts2303015118" min="0" max="100" required>
+      <div>
+        <label for="matkul2303015118" class="font-semibold">Nama Mata Kuliah:</label>
+        <input type="text" id="matkul2303015118" required class="rounded-xl border p-2 w-full">
+      </div>
 
-    <label for="uas2303015118">Nilai UAS (40%):</label>
-    <input type="number" id="uas2303015118" min="0" max="100" required>
+      <div>
+        <label for="keaktifan2303015118" class="font-semibold">Nilai Keaktifan (10%):</label>
+        <input type="number" id="keaktifan2303015118" min="0" max="100" required class="rounded-xl border p-2 w-full">
+      </div>
 
-    <button type="submit">Hitung Nilai Akhir</button>
-  </form>
+      <div>
+        <label for="tugas2303015118" class="font-semibold">Nilai Tugas (20%):</label>
+        <input type="number" id="tugas2303015118" min="0" max="100" required class="rounded-xl border p-2 w-full">
+      </div>
 
-  <div class="output" id="hasilOutput2303015118"></div>
+      <div>
+        <label for="uts2303015118" class="font-semibold">Nilai UTS (30%):</label>
+        <input type="number" id="uts2303015118" min="0" max="100" required class="rounded-xl border p-2 w-full">
+      </div>
+
+      <div>
+        <label for="uas2303015118" class="font-semibold">Nilai UAS (40%):</label>
+        <input type="number" id="uas2303015118" min="0" max="100" required class="rounded-xl border p-2 w-full">
+      </div>
+
+      <button type="submit" class="bg-yellow-300 hover:bg-yellow-400 text-black font-semibold py-2 px-6 rounded-full shadow-md mt-4">Hitung Nilai Akhir</button>
+    </form>
+
+    <div class="output mt-8 bg-purple-50 p-4 rounded-xl shadow-inner" id="hasilOutput2303015118"></div>
+  </div>
 
   <script>
     function hitungNilaiAkhir2303015118() {
@@ -90,7 +102,7 @@
       }
 
       const hasil = `
-        <h2>Hasil Perhitungan:</h2>
+        <h2 class="text-xl font-bold text-purple-600 mb-3">Hasil Perhitungan:</h2>
         <p><strong>NIM:</strong> ${document.getElementById("nim2303015118").value}</p>
         <p><strong>Nama:</strong> ${document.getElementById("nama2303015118").value}</p>
         <p><strong>Alamat:</strong> ${document.getElementById("alamat2303015118").value}</p>
@@ -98,12 +110,12 @@
         <p><strong>Email:</strong> ${document.getElementById("email2303015118").value}</p>
         <p><strong>Mata Kuliah:</strong> ${document.getElementById("matkul2303015118").value}</p>
         <p><strong>Nilai Akhir:</strong> ${nilaiAkhir.toFixed(2)}</p>
-        <p><strong>Grade:</strong> ${grade}</p>
+        <p><strong>Grade:</strong> <span class="font-bold text-lg">${grade}</span></p>
       `;
 
       document.getElementById("hasilOutput2303015118").innerHTML = hasil;
 
-      return false; // mencegah reload form
+      return false; 
     }
   </script>
 </body>

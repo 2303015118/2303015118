@@ -4,76 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pertemuan 6 - Latihan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+        }
+    </style>
+
     <script src="../js/script.js"></script>
     <script>
-         // Latihan 2 Slide 10
         function slide10(){
             alert("Hello dari Latihan 2 Slide 10");    
         }
     </script>
 </head>
-<body>
-    <!--Latihan 1 Slide 9-->
-    <h3>Latihan 1 Slide 9</h3>
-    <button onclick="slide9()">Muculkan Alert</button>
-    <br><hr>
+<body class="bg-pink-100 text-gray-800 p-8">
+    <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-lg p-6 space-y-6 border-4 border-dashed border-purple-300">
+        
+        <!--Latihan 1 Slide 9-->
+        <div>
+            <h3 class="text-lg font-bold text-purple-600">Latihan 1 Slide 9</h3>
+            <button onclick="slide9()" class="mt-2 px-4 py-2 bg-yellow-300 hover:bg-yellow-400 rounded-full shadow">Munculkan Alert</button>
+        </div>
+        <hr>
 
-    <!--Latihan 2 Slide 10-->
-    <h3>Latihan 2 SLide 10</h3>
-    <button onclick="slide10()">Munculkan Alert</button>
-    <br><hr>
+        <!--Latihan 1 Slide 10-->
+        <div>
+            <h3 class="text-lg font-bold text-pink-600">Latihan 2 Slide 10</h3>
+            <button onclick="slide10()" class="mt-2 px-4 py-2 bg-green-300 hover:bg-green-400 rounded-full shadow">Munculkan Alert</button>
+        </div>
+        <hr>
 
-    <!--Latihan 3 Slide 11-->
-    <h3>Latihan 3 Slide 11</h3>
-    <button onclick="slide11()">Munculkan Alert</button>
-    <br><hr>
+        <!--Latihan 1 Slide 11-->
+        <div>
+            <h3 class="text-lg font-bold text-blue-600">Latihan 3 Slide 11</h3>
+            <button onclick="slide11()" class="mt-2 px-4 py-2 bg-red-300 hover:bg-red-400 rounded-full shadow">Munculkan Alert</button>
+        </div>
+        <hr>
 
-    <!--Latihan 4 Slide 14-->
-    <h3>Latihan 4 SLide 14</h3>
-    <br>
-    <h1 id="heading1">Hello World</h1>
-    <button onclick="slide14()">Change Text</button>
-    <br><hr>
+        <!--Latihan 1 Slide 14-->
+        <div>
+            <h3 class="text-lg font-bold text-orange-600">Latihan 4 Slide 14</h3>
+            <h1 id="heading1" class="text-3xl font-bold text-center text-indigo-500 my-4">Hello World</h1>
+            <button onclick="slide14()" class="px-4 py-2 bg-purple-300 hover:bg-purple-400 rounded-full shadow">Change Text</button>
+        </div>
+        <hr>
 
-    <!--Latihan 5 Slide 15-->
-    <h3>Latihan 5 Slide 15</h3>
-    <a href="http://google.com" id="myGoogle">Goto google.com</a> <br><br>
-    <button onclick="changeGoogleCom()">Change google.co.com</button>
-    <button onclick="changeGoogleCoId()">Change google.co.id</button>
+        <!--Latihan 1 Slide 15-->
+        <div>
+            <h3 class="text-lg font-bold text-teal-600">Latihan 5 Slide 15</h3>
+            <a href="http://google.com" id="myGoogle" class="text-blue-500 underline">Goto google.com</a><br><br>
+            <button onclick="changeGoogleCom()" class="mr-2 px-4 py-2 bg-blue-300 hover:bg-blue-400 rounded-full shadow">google.com</button>
+            <button onclick="changeGoogleCoId()" class="px-4 py-2 bg-pink-300 hover:bg-pink-400 rounded-full shadow">google.co.id</button>
+        </div>
+        <hr>
 
-    <br><hr>
-    
-    <!--Latihan 1 Slide 16-->
-    <h3>Latihan 1 Slide 16</h3>
-    <p id="myText" style="font-size: 20px;">Ini adalah teks</p>
-    <button onclick="changeReguler()">Change to Reguler</button>
-    <button onclick="changeBold()">Change to Bold</button>
-    <br><hr>
+        <!--Latihan 1 Slide 16-->
+        <div>
+            <h3 class="text-lg font-bold text-lime-600">Latihan 1 Slide 16</h3>
+            <p id="myText" class="text-xl my-2">Ini adalah teks</p>
+            <button onclick="changeReguler()" class="mr-2 px-4 py-2 bg-indigo-300 hover:bg-indigo-400 rounded-full shadow">Reguler</button>
+            <button onclick="changeBold()" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 rounded-full shadow text-white">Bold</button>
+        </div>
+        <hr>
 
-    <!--Latihan 1 Slide 17-->
-    <h3>Latihan 1 Slide 17</h3>
-    <p id="myText2" style="font-size: 20px;">Ini adalah teks</p>
-    <button onclick="show()">Show</button>
-    <button onclick="hide()">Hide</button>
-    <br><hr>
+        <!--Latihan 1 Slide 17-->
+        <div>
+            <h3 class="text-lg font-bold text-rose-600">Latihan 1 Slide 17</h3>
+            <p id="myText2" class="text-xl my-2">Ini adalah teks</p>
+            <button onclick="show()" class="mr-2 px-4 py-2 bg-teal-300 hover:bg-teal-400 rounded-full shadow">Show</button>
+            <button onclick="hide()" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-full shadow">Hide</button>
+        </div>
+        <hr>
 
-    <!--Latihan 1 Slide 18-->
-    <h3>Latihan 1 Slide 18</h3>
-    <button onclick="showDate()">Show Date in Pop Up</button>
+        <!--Latihan 1 Slide 18-->
+        <div>
+            <h3 class="text-lg font-bold text-violet-600">Latihan 1 Slide 18</h3>
+            <button onclick="showDate()" class="mt-2 px-4 py-2 bg-yellow-400 hover:bg-yellow-500 rounded-full shadow">Show Date in Pop Up</button>
+        </div>
+
+    </div>
+
     <script>
-         // Latihan 1 Slide 9
         function slide9(){
             alert ("Hello dari Latihan 1 Slide 9");
         }
 
-        // Latihan 3 Slide 14
-        // Mengubah element yang beratribute id="heading1" menjadi "Hello dari Latihan 3 Slide 14" atau sesuai dengan yang diinginkan
         function slide14() {
             let heading1 = document.getElementById('heading1');
             heading1.innerHTML = "Hello dari Latihan 3 Slide 14";
         }
 
-        // Latihan 4 Slide 15
         function changeGoogleCom() {
             let myGoogle = document.getElementById('myGoogle');
             myGoogle.href = "http://google.com";  
@@ -86,7 +113,6 @@
             myGoogle.innerHTML = "Goto google.co.id";
         }
 
-        // Latihan 1 Slide 16
         function changeReguler() {
             let myText = document.getElementById('myText');
             myText.style.fontWeight = 'normal';
@@ -97,9 +123,8 @@
             myText.style.fontWeight = 'bold';
         }
 
-        // Latihan 1 Slide 17
         function show() {
-            let myText2 = document.getElementById('myText2');;
+            let myText2 = document.getElementById('myText2');
             myText2.style.display = 'block';
         }
 
@@ -108,15 +133,10 @@
             myText2.style.display = 'none';
         }
 
-        // Latihan 1 Slide 18
         function showDate() {
             let date = new Date();
             alert(date);
-            
         }
     </script>
-    </body>
+</body>
 </html>
-
-
-
