@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Single Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    UTS PRAKTIKUM PEMROGRAMAN WEB <span style="float:right"></span>
+  </header>
+
+  <nav>
+    <button onclick="showPage('home')" class="active">Home</button>
+    <button onclick="showPage('about')">About</button>
+    <button onclick="showPage('portfolio')">Portfolio</button>
+    <button onclick="showPage('contact')">Contact</button>
+  </nav>
+
+  <div class="content">
+    <div id="home">
+      <h2>🎯 Motivasi Berkuliah di Jurusan Teknik Informatika</h2>
+      <p>
+        Saya memilih berkuliah di jurusan Teknik Informatika karena saya tertarik dengan bagaimana teknologi dapat mempermudah kehidupan manusia dan membuka peluang karier yang luas. 
+        Dunia TI yang terus berkembang menantang saya untuk terus belajar dan beradaptasi. Saya ingin menjadi seseorang yang tidak hanya bisa membuat produk digital yang menarik secara visual, 
+        tetapi juga bisa mengatur jalannya sebuah proyek dengan baik agar berjalan efisien dan tepat sasaran.
+      </p>
+    
+      <h2>📍 Roadmap Menuju Karier Profesional di Bidang TI</h2>
+      <ol>
+        <li>
+          <strong>Penguatan Dasar-Dasar Keilmuan</strong>
+          <ul>
+            <li>Memperdalam pemahaman dasar dalam pemrograman dan pengembangan web.</li>
+            <li>Mempelajari prinsip UI/UX dan alat desain seperti Figma, Adobe XD.</li>
+            <li>Mempelajari dasar manajemen proyek seperti Agile dan Scrum.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Pengembangan Skill UI/UX Designer</strong>
+          <ul>
+            <li>Membuat berbagai desain antarmuka untuk aplikasi fiktif maupun nyata.</li>
+            <li>Melakukan user research dan usability testing.</li>
+            <li>Menyusun portofolio desain secara online.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Persiapan Sebagai Project Manager</strong>
+          <ul>
+            <li>Belajar tools manajemen seperti Trello, Notion, dan Asana.</li>
+            <li>Melatih kemampuan komunikasi dan kepemimpinan dalam tim kecil.</li>
+            <li>Mengikuti kursus atau pelatihan manajemen proyek bersertifikat (seperti CAPM, Scrum Foundation).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Mengikuti Magang</strong>
+          <ul>
+            <li>Mengincar posisi magang baik di bidang UI/UX maupun project management.</li>
+            <li>Belajar langsung dari pengalaman di industri dan membangun relasi profesional.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Menyusun Portofolio & Pencapaian</strong>
+          <ul>
+            <li>Mempublikasikan hasil kerja magang dan mini project ke dalam portfolio digital.</li>
+            <li>Mencantumkan pencapaian, proyek, dan sertifikat dalam CV dan LinkedIn.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Memulai Karier Profesional</strong>
+          <ul>
+            <li>Target jangka pendek: menjadi Junior UI/UX Designer atau Project Assistant.</li>
+            <li>Target jangka panjang: menjadi Project Manager yang memahami alur desain dan teknologi secara menyeluruh.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div id="about" style="display:none">
+      <h2>About Me</h2>
+      <p><strong>NIM:</strong> 2303015118</p>
+      <p><strong>Nama:</strong> NAURAH FAIQAH HASAN</p>
+      <p><strong>Tempat,Tanggal Lahir:</strong> Bekasi, 13 Februari 2005</p>
+      <img src="aku.jpg" alt="Foto Pribadi" width="120" />
+    </div>
+
+    <div id="portfolio" style="display:none">
+      <h2>Portfolio</h2>
+      <div class="slideshow-container">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        
+        <div class="slide">
+          <img src="figma.png" alt="Project 1" width="500" height="300">
+          <p><strong>Design Figma di UI/UX DESIGN Workshop FTII</strong></p>
+        </div>
+        <div class="slide" style="display: none;">
+          <img src="figma2.png" alt="Project 2" width="100" height="130">
+          <p><strong>Design FIgma untuk Toko</strong></p>
+        </div>
+        <div class="slide" style="display: none;">
+          <img src="kerangkafigma.png" alt="Project 3" width="100" height="130">
+          <p><strong>KerangKA FIGMA</strong></p>
+        </div>
+        <div class="slide" style="display: none;">
+          <img src="figma2.png" alt="Project 4" width="100" height="130">
+          <p><strong>dummy</strong></p>
+        </div>
+        <div class="slide" style="display: none;">
+          <img src="bahaspkm.jpg" alt="Project 5" width="100" height="130">
+          <p><strong>Pembahasan PKM</strong></p>
+        </div>
+        <div class="slide" style="display: none;">
+          <img src="figma.png" alt="Project 6" width="100" height="130">
+          <p><strong>Design Figma di UI/UX DESIGN Workshop FTII</strong></p>
+        </div>
+
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+      </div>
+    </div>
+
+    <div id="contact" style="display:none">
+      <h2>Contact Us</h2>
+      <div class="contact-form">
+        <form>
+          <label>Your name</label>
+          <input type="text" placeholder="First" required />
+          <input type="text" placeholder="Last" required />
+
+          <label>E-mail</label>
+          <input type="email" placeholder="your@email.com" required />
+
+          <label>Phone</label>
+          <input type="tel" placeholder="08123456789" required />
+
+          <label>Your message</label>
+          <textarea placeholder="Your message..." required></textarea>
+
+          <button type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 UTS PRAK WEB
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
